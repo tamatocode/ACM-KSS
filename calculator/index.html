@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="cal" >Welcome To My Calculator!</h1>
+        <input type="text" id="display" readonly> 
+        
+        <div class="row1">
+            <button class="button" id="seven" onclick="insert('7')"><b>7</b></button>
+            <button class="button" id="eight" onclick="insert('8')"><b>8</b></button>
+            <button class="button" id="nine" onclick="insert('9')"><b>9</b></button>
+            <button class="button" id="multiply" onclick="insert('*')"><b>*</b></button>
+        </div> <br>
+        <div class="row2">
+            <button class="button" id="four" onclick="insert('4')"><b>4</b></button>
+            <button class="button" id="five" onclick="insert('5')"><b>5</b></button>
+            <button class="button" id="six" onclick="insert('6')"><b>6</b></button>
+            <button class="button" id="divide" onclick="insert('/')"><b>/</b></button>
+        </div> <br>
+        <div class="row3">
+            <button class="button" id="one" onclick="insert('1')"><b>1</b></button>
+            <button class="button" id="two" onclick="insert('2')"><b>2</b></button>
+            <button class="button" id="three" onclick="insert('3')"><b>3</b></button>
+            <button class="button" id="plus" onclick="insert('+')"><b>+</b></button>
+        </div> <br>
+        <div class="row4">
+            <button class="button" id="zero" onclick="insert('0')"><b>0</b></button>
+            <button class="button" id="decimal" onclick="insert('.')"><b>.</b></button>
+            <button class="button" id="minus" onclick="insert('-')"><b>-</b></button>
+        </div><br>
+        <div class="row5">
+            <button class="button" onclick="clearDisplay()"><b>C</b></button>
+            <button class="button" onclick="calculate()"><b>=</b></button>
+        </div>
+    </div>
+    <script>
+        function insert(value) {
+            document.getElementById("display").value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = '';
+        }
+
+        function calculate() {
+            try {
+                document.getElementById("display").value = eval(document.getElementById("display").value);
+            } catch (error) {
+                document.getElementById("display").value = "Error";
+            }
+        }
+    </script>
+</body>
+
+</html>
